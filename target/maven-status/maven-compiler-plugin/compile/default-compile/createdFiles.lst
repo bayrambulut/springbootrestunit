@@ -1,0 +1,6 @@
+com\example\springbootrestunit\service\BookService.class
+com\example\springbootrestunit\controller\BookController.class
+com\example\springbootrestunit\service\BookServiceImpl.class
+com\example\springbootrestunit\repository\BookRepository.class
+com\example\springbootrestunit\Application.class
+com\example\springbootrestunit\model\Book.class
