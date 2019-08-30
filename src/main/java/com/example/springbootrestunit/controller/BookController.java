@@ -27,6 +27,10 @@ public class BookController {
 		return service.findAll();
 	}
 	
+    @GetMapping("/")
+    public String index() {
+        return "Hello there! I'm running.";
+    }
 	
 	
 }
