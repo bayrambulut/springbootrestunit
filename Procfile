@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/springbootrestunit.jar
+web: $JAVA_OPTS -Dserver.port={$PORT:8080} -jar target/springbootrestunit.jar
