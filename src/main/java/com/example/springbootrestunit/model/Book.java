@@ -24,6 +24,20 @@ public class Book {
 		
 	}
 	
+	public Book(Long id, String name, String author) {
+		
+		this.id = id;
+		this.name = name;
+		this.author = author;
+	
+	}
+	
+	public Book(String name, String author) {
+		
+		this.name = name;
+		this.author = author;
+	
+	}
 
 
 	public Long getId() {
