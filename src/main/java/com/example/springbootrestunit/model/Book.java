@@ -67,4 +67,41 @@ public class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+	
+	@Override
+	public String toString() {
+		return this.id + ":" + this.name + ":" + this.author;
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.id.intValue();
+	}
+	
+    // Overriding equals() to compare two Complex objects 
+    @Override
+    public boolean equals(Object o) { 
+  
+        // If the object is compared with itself then return true   
+        if (o == this) { 
+            return true; 
+        } 
+  
+        /* Check if o is an instance of Book or not 
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof Book)) { 
+            return false; 
+        } 
+          
+        // typecast o to Complex so that we can compare data members  
+        Book c = (Book) o; 
+          
+        // Compare the data members and return accordingly  
+        if(c.getId() != null && this.getId() != null) {
+        	return c.getId().equals(this.getId());
+        }
+        
+        return false;
+        
+    } 
 }

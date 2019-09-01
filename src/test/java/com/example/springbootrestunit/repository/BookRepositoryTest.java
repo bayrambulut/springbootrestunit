@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import javax.transaction.Transactional;
 
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,6 +24,9 @@ import com.example.springbootrestunit.model.Book;
 @ActiveProfiles("test")
 public class BookRepositoryTest {
 
+	static Logger logger = Logger. getLogger(BookRepositoryTest.class.getName());
+
+	
 	@Autowired
 	BookRepository repository;
 	
@@ -42,7 +46,7 @@ public class BookRepositoryTest {
 		Book readBook = repository.findById(savedBook.getId())
 		         .orElseThrow(() -> BookNotFoundException.build(savedBook.getId()));
 		
-		System.out.println("id : " + book.getId());
+		logger.info("id : " + book.getId());
 		assertEquals(book.getId(), readBook.getId());
 		assertEquals(book.getName(), "Book");
 		assertEquals(book.getAuthor(), "Author");
